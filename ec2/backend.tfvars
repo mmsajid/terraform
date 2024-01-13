@@ -1,4 +1,4 @@
-bucket = "liimrasoft-terraform-state-jenkins"
+bucket = "liimrasoft-terraform-state-jenkins-new"
 key = "liimra/terraform.tfstate"
 region = "eu-west-1"
 dynamodb_table = "liimrasoft-terraform-state-jenkins-dynamodb-table"
