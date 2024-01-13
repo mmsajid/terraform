@@ -1,0 +1,32 @@
+
+# References https://spacelift.io/blog/terraform-gitignore
+
+# Local .terraform directories
+**/.terraform/*
+
+# Ignore variables files
+*.auto.tfvars
+
+# Ignore override files
+*.tfoverride
+
+# Ignore environment-specific files
+.envrc
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Crash log files
+crash.log
+crash.*.log
+
+.terraform.lock.hcl
