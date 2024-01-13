@@ -11,7 +11,7 @@ terraform {
 
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
+  ami           = "ami-0905a3c97561e0b69"
   instance_type = "t2.micro"
   key_name = "Automated-EC2"
 
