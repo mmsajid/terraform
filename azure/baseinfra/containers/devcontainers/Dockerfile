@@ -1,6 +1,6 @@
 # This is a dev container with the following list of application instaaled
 # Use an official Debian image as the base image
-FROM debian:buster-slim
+FROM ubuntu:noble-20231221
 
 # Set the working directory to /app
 WORKDIR /app
