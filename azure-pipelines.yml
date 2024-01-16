@@ -20,7 +20,7 @@ stages:
             tags: |
              latest
              $(Build.BuildId)
-            command: 'buildandpush'
+            command: 'build'
             Dockerfile: '**/Dockerfile'
 
 - stage: Build on arm64
@@ -36,7 +36,7 @@ stages:
             tags: |
              latest
              $(Build.BuildId)
-            command: 'buildandpush'
+            command: 'build'
             Dockerfile: '**/Dockerfile'
            
 # steps:
