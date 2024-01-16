@@ -1,5 +1,5 @@
 # This is a dev container with the following list of application instaaled
-# Use an official Debian image as the base image
+# Use an official Debian image as the base image added
 FROM ubuntu:noble-20231221
 
 # Set the working directory to /app
