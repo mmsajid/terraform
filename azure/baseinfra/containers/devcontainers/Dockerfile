@@ -17,14 +17,3 @@ ENV TERRAFORM_VERSION=0.15.5
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin && \
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-
-# Verify Terraform installation
-RUN terraform --version
-
-# Set any additional configuration or environment variables as needed
-
-# Set the entry point for the container
-ENTRYPOINT ["terraform"]
-
-# Set the default command for the container
-CMD ["--version"]

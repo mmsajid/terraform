@@ -7,8 +7,7 @@ trigger:
 - master
 
 pool:
-# Use latest mac os version
-  vmImage: macOS-12
+  vmImage: ubuntu-22.04
 
 steps:
 - script: echo Hello, world!
@@ -18,14 +17,4 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-  
-- task: Docker@2
-  inputs:
-    containerRegistry: 'svc_dockerhub'
-    repository: 'mmsajid/devops'
-    tags: |
-     latest
-     $(Build.BuildId)
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
 
