@@ -7,9 +7,9 @@ trigger:
 - master
 
 pool:
-# Use latest mac os version
-  vmImage: ubuntu-22.04
+  vmImage: ubuntu-latest
   
+steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'svc_dockerhub'
