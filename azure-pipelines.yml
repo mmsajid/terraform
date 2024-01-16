@@ -6,46 +6,39 @@
 trigger:
 - master
 
-stages:
-- stage: BuildOnx64
-  pool:
-    vmImage: ubuntu-latest
-  jobs:
-    - job: Build
-      steps:
-        - task: Docker@2
-          inputs:
-            containerRegistry: 'svc_dockerhub'
-            repository: 'mmsajid/devops-x64'
-            tags: |
-             latest
-             $(Build.BuildId)
-            command: 'build'
-            Dockerfile: '**/Dockerfile'
 
-- stage: BuildOnarm64
-  pool:
-    vmImage: macos-latest
+# Docker image for arm64v8
+stages: 
+- stage: BuildOnArm64
   jobs:
-    - job: Build
-      steps:
-        - task: Docker@2
-          inputs:
-            containerRegistry: 'svc_dockerhub'
-            repository: 'mmsajid/devops-arm64'
-            tags: |
-             latest
-             $(Build.BuildId)
-            command: 'build'
-            Dockerfile: '**/Dockerfile'
-           
-# steps:
-# - task: Docker@2
-#   inputs:
-#     containerRegistry: 'svc_dockerhub'
-#     repository: 'mmsajid/devops'
-#     tags: |
-#      latest
-#      $(Build.BuildId)
-#     command: 'buildAndPush'
-#     Dockerfile: '**/Dockerfile'
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'svc_dockerhub'
+        repository: 'mmsajid/devops-arm64v8'
+        tags: |
+         latest
+         $(Build.BuildId)
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        arguments: '--platform linux/arm64/v8'
+# Docker image for x64
+- stage: BuildOnx64
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'svc_dockerhub'
+        repository: 'mmsajid/devops-x64'
+        tags: |
+         latest
+         $(Build.BuildId)
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        arguments: '--platform linux/amd64'
