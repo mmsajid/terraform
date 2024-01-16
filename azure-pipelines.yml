@@ -21,7 +21,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'svc_dockerhub'
-    repository: 'devops'
+    repository: 'mmsajid/devops'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 
