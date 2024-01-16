@@ -7,7 +7,7 @@ trigger:
 - master
 
 stages:
-- stage: Build on x64
+- stage: BuildOnx64
   pool:
     vmImage: ubuntu-latest
   jobs:
@@ -23,7 +23,7 @@ stages:
             command: 'build'
             Dockerfile: '**/Dockerfile'
 
-- stage: Build on arm64
+- stage: BuildOnarm64
   pool:
     vmImage: macos-latest
   jobs:
