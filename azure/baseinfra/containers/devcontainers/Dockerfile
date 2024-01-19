@@ -1,6 +1,6 @@
 # This is a dev container with the following list of application instaaled
 # Use an official Debian image as the base image added
-FROM ubuntu:noble-20231221
+FROM ubuntu:latest
 
 # Set the working directory to /app
 WORKDIR /app
@@ -14,10 +14,10 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install Terraform
-ENV TERRAFORM_VERSION=0.15.5
-RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
-    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin && \
-    rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+# ENV TERRAFORM_VERSION=0.15.5
+# RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+#     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin && \
+#     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
 
 # # Install Packer
