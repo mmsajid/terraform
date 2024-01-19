@@ -14,10 +14,10 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install Terraform
-# ENV TERRAFORM_VERSION=0.15.5
-# RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
-#     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin && \
-#     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+ENV TERRAFORM_VERSION=1.7.0
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_arm64.zip && \
+    unzip terraform_${TERRAFORM_VERSION}_linux_arm64.zip -d /usr/local/bin && \
+    rm terraform_${TERRAFORM_VERSION}_linux_arm64.zip
 
 
 # # Install Packer
