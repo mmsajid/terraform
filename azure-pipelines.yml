@@ -14,7 +14,7 @@ stages:
   - job: Build
     pool: 
       name: SH-Mypool
-      demands: Agent.Name -equals 'ubuntu_arm64'
+      demands: Agent.Name -equals ubuntu_arm64
     steps:
     - task: Docker@2
       inputs:
