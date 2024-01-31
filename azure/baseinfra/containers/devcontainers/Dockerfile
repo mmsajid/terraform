@@ -19,6 +19,8 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_arm64.zip -d /usr/local/bin && \
     rm terraform_${TERRAFORM_VERSION}_linux_arm64.zip
 
+    
+
 
 # # Install Packer
 
