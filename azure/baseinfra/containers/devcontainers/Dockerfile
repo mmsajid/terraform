@@ -31,4 +31,5 @@ ENV GO_VERSION=1.21.6
 RUN wget https://go.dev/dl/go${GO_VERSION}.linux-arm64.tar.gz && \
     tar -xzvf go${GO_VERSION}.linux-arm64.tar.gz -C /usr/local/bin && \
     rm go${GO_VERSION}.linux-arm64.tar.gz && \    
-ENV PATH=$PATH:/usr/local/bin/go/bin
+    
+ENV PATH="$PATH:/usr/local/bin/go/bin"
