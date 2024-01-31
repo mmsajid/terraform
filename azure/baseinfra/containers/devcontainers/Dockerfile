@@ -20,5 +20,8 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     rm terraform_${TERRAFORM_VERSION}_linux_arm64.zip
 
 # Install Packer
-RUN wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg && \     echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list && \
-    sudo apt update && sudo apt install packer
+ENV PACKER_VERSION=1.10.1
+RUN wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_arm64.zip && \
+    unzip packer_${PACKER_VERSION}_linux_arm64.zip -d /usr/local/bin && \
+    rm packer_${PACKER_VERSION}_linux_arm64.zip
+    
