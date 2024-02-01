@@ -43,5 +43,5 @@ stages:
          latest
          $(Build.BuildId)
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/Dockerfile-x86_64'
         arguments: '--platform linux/amd64'
