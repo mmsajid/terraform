@@ -33,7 +33,7 @@ stages:
   - job: Build
     pool:
       name: SH-Mypool
-      demands: Agent.Name -equals ubuntu_amd64
+      demands: Agent.Name -equals ubuntu_x86_64
     steps:
     - task: Docker@2
       inputs:
